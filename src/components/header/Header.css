@@ -1,0 +1,123 @@
+.header {
+	height: 40vh;
+	background-color: #003580;
+	display: flex;
+	justify-content: center;
+	color: #fff;
+}
+.header.listMode {
+	height: 20vh;
+}
+.headerContainer {
+	width: 100%;
+	margin: 0 10px;
+	max-width: 1024px;
+	position: relative;
+}
+
+.headerList {
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	margin-bottom: 10vh;
+}
+
+.headerListItem {
+	display: flex;
+	gap: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.headerListItem.active,
+.headerListItem:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+}
+
+.headerListItem.active {
+	border: 1px solid white;
+}
+
+/* begin  search bar styling  */
+.searchBar {
+	position: absolute;
+	bottom: -25px;
+	color: black;
+	background-color: white;
+	padding: 0 6px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 1024px;
+	height: 40px;
+	border-radius: 5px;
+	border: 3px solid #f1b355;
+}
+.headerSearchItem {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	/* width: 100%; */
+}
+.headerSearchDate {
+	/* border-left: 3px solid #f1b355;
+	border-right: 3px solid #f1b355; */
+}
+.dateRange {
+	z-index: 10;
+	position: absolute;
+	top: 120%;
+	border-radius: 10px;
+	box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.32);
+	-webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.32);
+	-moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.32);
+}
+
+.headerSearchItem input {
+	border: none;
+	outline: none;
+	padding: 10px;
+}
+.headerIcon {
+	color: lightgray;
+}
+.headerSearchText {
+	color: lightgray;
+}
+
+.options {
+	z-index: 10;
+	position: absolute;
+	top: 120%;
+	right: 15%;
+	background-color: white;
+	box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.32);
+	-webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.32);
+	-moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.32);
+}
+.optionsItem {
+	width: 20vw;
+	padding: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.optionCounter {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.hrOptionItems {
+	max-width: 90%;
+	border-top: 1px solid rgb(216, 207, 207);
+}
+.hederSearchBtn {
+	background-color: #206cd6;
+	padding: 4px 6px;
+}
