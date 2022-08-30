@@ -1,0 +1,9 @@
+.optionCounterBtn {
+	border: 1px solid #003580;
+	border-radius: 3px;
+	cursor: pointer;
+	padding: 0.5em 1em;
+}
+.optionCounterBtn:disabled {
+	cursor: not-allowed;
+}
