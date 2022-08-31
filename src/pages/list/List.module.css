@@ -12,6 +12,7 @@
 }
 
 .listSearch {
+	flex: 1;
 	background-color: #febb02;
 	padding: 10px;
 	border-radius: 10px;
@@ -78,4 +79,5 @@
 }
 
 .listResult {
+	flex: 3;
 }
