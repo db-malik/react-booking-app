@@ -17,6 +17,8 @@ import { useState } from "react";
 
 const Hotel = () => {
 	const [open, setOpen] = useState(false);
+	const [slideNumber, setSlideNumber] = useState(0);
+
 	const photos = [
 		{
 			src:
@@ -43,6 +45,20 @@ const Hotel = () => {
 				"https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707389.jpg?k=52156673f9eb6d5d99d3eed9386491a0465ce6f3b995f005ac71abc192dd5827&o=&hp=1",
 		},
 	];
+	const handleOpen = (i) => {
+		setOpen(true);
+		setSlideNumber(i);
+	};
+	const handleMove = (direction) => {
+		let newSlideNumber;
+		if (direction === "l") {
+			newSlideNumber = slideNumber === 0 ? 5 : slideNumber - 1;
+		}
+		if (direction === "r") {
+			newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
+		}
+		setSlideNumber(newSlideNumber);
+	};
 	return (
 		<div>
 			<NavBar />
@@ -53,20 +69,24 @@ const Hotel = () => {
 						<FontAwesomeIcon
 							icon={faCircleXmark}
 							className={classes.close}
-							// onClick={() => setOpen(false)}
+							onClick={() => setOpen(false)}
 						/>
 						<FontAwesomeIcon
 							icon={faCircleArrowLeft}
 							className={classes.arrow}
-							// onClick={() => handleMove("l")}
+							onClick={() => handleMove("l")}
 						/>
 						<div className={classes.sliderWrapper}>
-							{/* <img src={photos[slideNumber].src} alt="" className={classes.sliderImg} /> */}
+							<img
+								src={photos[slideNumber].src}
+								alt=""
+								className={classes.sliderImg}
+							/>
 						</div>
 						<FontAwesomeIcon
 							icon={faCircleArrowRight}
 							className={classes.arrow}
-							// onClick={() => handleMove("r")}
+							onClick={() => handleMove("r")}
 						/>
 					</div>
 				)}
@@ -87,7 +107,7 @@ const Hotel = () => {
 						{photos.map((photo, i) => (
 							<div className={classes.hotelImgWrapper} key={i}>
 								<img
-									// onClick={() => handleOpen(i)}
+									onClick={() => handleOpen(i)}
 									src={photo.src}
 									alt=""
 									className={classes.hotelImg}
