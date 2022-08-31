@@ -8,6 +8,7 @@ import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 
 import classes from "./List.module.css";
+import SearchItem from "../../components/searchItem/SearchItem";
 
 const List = () => {
 	const location = useLocation();
@@ -27,9 +28,9 @@ const List = () => {
 							<label htmlFor="">Destination</label>
 							<input type="text" placeholder={destination} />
 						</div>
-						<div className="lsItem">
-							<label>Check-in Date</label>
 
+						<div className={classes.lsItem}>
+							<label>Check-in Date</label>
 							<span onClick={() => setOpenDate(!openDate)}>{`${format(
 								date[0].startDate,
 								"MM/dd/yyyy"
@@ -42,45 +43,45 @@ const List = () => {
 								/>
 							)}
 						</div>
-						<div className="lsItem">
+						<div className={classes.lsItem}>
 							<label>Options</label>
-							<div className="lsOptions">
-								<div className="lsOptionItem">
-									<span className="lsOptionText">
+							<div className={classes.lsOptions}>
+								<div className={classes.lsOptionItem}>
+									<span className={classes.lsOptionText}>
 										Min price <small>per night</small>
 									</span>
-									<input type="number" className="lsOptionInput" />
+									<input type="number" className={classes.lsOptionInput} />
 								</div>
-								<div className="lsOptionItem">
-									<span className="lsOptionText">
+								<div className={classes.lsOptionItem}>
+									<span className={classes.lsOptionText}>
 										Max price <small>per night</small>
 									</span>
-									<input type="number" className="lsOptionInput" />
+									<input type="number" className={classes.lsOptionInput} />
 								</div>
-								<div className="lsOptionItem">
-									<span className="lsOptionText">Adult</span>
+								<div className={classes.lsOptionItem}>
+									<span className={classes.lsOptionText}>Adult</span>
 									<input
 										type="number"
 										min={1}
-										className="lsOptionInput"
+										className={classes.lsOptionInput}
 										placeholder={options.adult}
 									/>
 								</div>
-								<div className="lsOptionItem">
-									<span className="lsOptionText">Children</span>
+								<div className={classes.lsOptionItem}>
+									<span className={classes.lsOptionText}>Children</span>
 									<input
 										type="number"
 										min={0}
-										className="lsOptionInput"
+										className={classes.lsOptionInput}
 										placeholder={options.children}
 									/>
 								</div>
-								<div className="lsOptionItem">
-									<span className="lsOptionText">Room</span>
+								<div className={classes.lsOptionItem}>
+									<span className={classes.lsOptionText}>Room</span>
 									<input
 										type="number"
 										min={1}
-										className="lsOptionInput"
+										className={classes.lsOptionInput}
 										placeholder={options.room}
 									/>
 								</div>
@@ -88,7 +89,11 @@ const List = () => {
 						</div>
 						<button>Search</button>
 					</div>
-					<div className="listResult">result</div>
+					<div className={classes.listResult}>
+						<SearchItem />
+						<SearchItem />
+						<SearchItem />
+					</div>
 				</div>
 			</div>
 		</div>
